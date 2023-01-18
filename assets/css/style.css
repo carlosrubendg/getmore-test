@@ -1,0 +1,505 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Inactive {
+  display: none;
+}
+
+.Overflow {
+  overflow: hidden;
+}
+
+.Logo {
+  position: absolute;
+  height: 100%;
+  padding: 24px;
+  border-right: 2px solid #ffffff;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  margin-left: 85px;
+  padding: 48px 52px;
+  width: calc(100vw - 85px);
+}
+
+.Header ul {
+  display: flex;
+  list-style: none;
+}
+
+.Header li:not(:last-child) {
+  margin-right: 40px;
+}
+
+.Header a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+}
+
+.Header a.ActiveMenu {
+  font-weight: bold;
+  position: relative;
+}
+
+.Header a.ActiveMenu::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  bottom: -8px;
+  left: 0;
+  width: 40%;
+  background: #ffffff;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.Header a:hover::after {
+  width: 100%;
+}
+
+.Header a.ActiveLang {
+  font-weight: bold;
+}
+
+.Header__bars {
+  display: none;
+}
+
+.Hero {
+  background-image: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Hero__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 137px;
+}
+
+.Hero__content h1 {
+  font-size: 4rem;
+  font-weight: lighter;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.Hero__content h1 span {
+  font-weight: normal;
+  color: #cbe346;
+}
+
+.Hero__button a {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+.Hero__button img {
+  margin-left: 12px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(96deg) brightness(102%) contrast(102%);
+}
+
+.Rectangle {
+  width: 100%;
+  display: flex;
+  padding: 80px;
+  background-color: #f3f4f8;
+}
+
+.Rectangle h2 {
+  font-size: 3.4rem;
+  font-weight: lighter;
+  margin-bottom: 40px;
+}
+
+.Rectangle p {
+  font-size: 1.6rem;
+  color: #787878;
+}
+
+.Rectangle__column {
+  width: 33.33%;
+  padding: 24px;
+}
+
+.Rectangle__column:nth-child(1) {
+  text-align: right;
+}
+.Rectangle__column:nth-child(1) p {
+  color:#cbe346;
+  margin-top: 8px;
+}
+
+.Rectangle__column:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Rectangle__column:nth-child(3) {
+  position: relative;
+}
+
+.Rectangle__column:nth-child(3) a {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.6rem;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+.Rectangle__column:nth-child(3) img {
+  margin-left: 52px;
+}
+
+.NuestrasRaquetas {
+  display: flex;
+}
+
+.NuestrasRaquetas__info {
+  display: flex;
+  align-items: center;
+  background-image: url(../img/nuestras-raquetas-ball.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 40%;
+  padding: 20px 100px;
+}
+
+.NuestrasRaquetas__content {
+  margin-left: 140px;
+}
+
+.NuestrasRaquetas__content h2 {
+  color: #ffffff;
+  font-size: 3.4rem;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+.NuestrasRaquetas__content span {
+  font-weight: bold;
+}
+
+.NuestrasRaquetas__content p {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+.NuestrasRaquetas__ovals {
+  display: flex;
+  margin-bottom: 24px;
+}
+.NuestrasRaquetas__oval {
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.NuestrasRaquetas__oval:not(:last-child) {
+  margin-right: 20px;
+}
+
+.NuestrasRaquetas__oval--active {
+  background-color: #cbe346;
+}
+
+.NuestrasRaquetas__PrevNext {
+  display: flex;
+}
+
+.NuestrasRaquetas__PrevNext div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.NuestrasRaquetas__PrevNext div:nth-child(1) {
+  border: 1px solid #ffffff;
+  border-radius: 100%;
+  margin-right: 28px;
+}
+
+.NuestrasRaquetas__PrevNext div:nth-child(1) img {
+  transform: rotate(180deg);
+}
+
+.NuestrasRaquetas__PrevNext div:nth-child(2) {
+  background-color: #cbe346;
+  border-radius: 100%;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.74);
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.74);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.74);
+}
+
+.NuestrasRaquetas__products {
+  display: flex;
+  width: 60%;
+  padding: 40px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.NuestrasRaquetas__product {
+  position: relative;
+}
+
+.NuestrasRaquetas__product:not(:last-child) {
+  margin-right: 40px;
+}
+
+.NuestrasRaquetas__number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 40px;
+  height: 40px;
+  background-color: #cbe346;
+  color: #ffffff;
+  font-size: 1.4rem;
+  border-radius: 100%;
+}
+
+.FinalImg {
+  width: 100vw;
+  height: 75vh;
+  background-image: url(../img/action-athlete-ball.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.Footer {
+  display: flex;
+  background-color: #cbe346;
+  padding: 80px;
+}
+
+.Footer__menu {
+  width: 90%;
+}
+
+.Footer__menu ul {
+  display: flex;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.Footer__menu li {
+  font-size: 1.6rem;
+}
+
+.Footer__menu li:not(:last-child) {
+  margin-right: 40px;
+}
+
+.Footer__menu a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.Footer__menu a.ActiveMenu {
+  font-weight: bold;
+}
+
+.Footer__rrss a:not(:last-child) {
+  margin-right: 12px;
+}
+
+.Footer__logo {
+  display: flex;
+  justify-content: end;
+  width: 10%;
+}
+
+@media (max-width: 1080px) {
+  .Rectangle h2 {
+    font-size: 2.4rem;
+  }
+
+  .NuestrasRaquetas__content {
+    margin-left: 60px;
+  }
+
+  .NuestrasRaquetas__content h2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .Logo {
+    height: 75%;
+    padding: 20px;
+  }
+
+  .Header {
+    justify-content: end;
+    margin-left: 77px;
+    padding: 20px;
+    width: calc(100vw - 77px);
+  }
+
+  .Header__menu,
+  .Header__languages {
+    display: none;
+  }
+
+  .Header__bars {
+    display: block;
+    font-size: 3rem;
+    color: #ffffff;
+    z-index: 3;
+  }
+
+  .Header__mobile {
+    position: absolute;
+    top: 0px;
+    left: -77px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    overflow-x: hidden;
+    z-index: 2;
+  }
+
+  .HeaderLogo__mobile {
+    padding: 20px;
+  }
+
+  .Header__mobile ul {
+    display: block;
+    text-align: center;
+    margin-top: 52px;
+  }
+
+  .Header__mobile li:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+
+  .HeaderMobile__rrss {
+    text-align: center;
+    margin-top: 52px;
+  }
+
+  .Hero {
+    height: 75vh;
+  }
+
+  .Hero__content {
+    margin-left: 97px;
+  }
+
+  .Hero__content h1 {
+    font-size: 2rem;
+  }
+
+  .Rectangle {
+    padding: 20px 20px 40px 20px;
+    flex-wrap: wrap;
+  }
+
+  .Rectangle p {
+    margin-bottom: 24px;
+  }
+
+  .Rectangle__column {
+    width: 100%;
+    padding: 24px 0;
+  }
+
+  .Rectangle__column:nth-child(1) p {
+    margin: 0;
+  }
+
+  .NuestrasRaquetas {
+    flex-wrap: wrap;
+  }
+
+  .NuestrasRaquetas__info {
+    width: 100%;
+    padding: 52px 20px;
+  }
+
+  .NuestrasRaquetas__content {
+    margin: 0;
+  }
+
+  .NuestrasRaquetas__products {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .FinalImg {
+    height: 50vh;
+    background-position: initial;
+  }
+
+  .Footer {
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  .Footer__menu {
+    width: 100%;
+  }
+
+  .Footer__menu ul {
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .Footer__menu li:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+
+  .Footer__rrss {
+    text-align: center;
+  }
+
+  .Footer__logo {
+    width: 100%;
+    margin-top: 40px;
+    justify-content: center;
+  }
+}
